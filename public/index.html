@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASEEB STOPWATCH</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+
+    <div class="time">
+        <div  id="min"   class="min">00:</div>
+        <div  id="sec"    class="sec">00:</div>
+        <div id="msec"    class="msec">00</div>
+       
+    </div>
+
+    <div class="but">
+        <button onclick="start()" class="bn">START</button>
+        <button onclick="pause()" class="bn">PAUSE</button>
+        <button onclick="reset()" class="bn">RESET</button>
+    </div>
+
+    <!-- <div class="record">
+        <input type="text" id="name" class="name">
+
+        <input type="number" id="age"  class="age">
+
+
+    </div> -->
+
+    <!-- <div class="alert alert-success" role="alert">
+        NOTE : IF YOU WANT TO SAVE PREVIOUS RECORD FILL RECORD FORM .<BR>
+               THEN START YOUR WATCH.<BR>
+                FOR WATCHING RECORD THEN CLICK ON RECORD AFTER PAUSE.
+      </div> -->
+
+      <!-- <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">NAME</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+        </div> -->
+        <button onclick="record()" class="btn btn-primary">RECORD</button>
+      <!-- </form> -->
+
+      <h1 id= "time"></h1>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
