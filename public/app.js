@@ -1,23 +1,11 @@
-// var sec = 0; //counter
-// var inter; //its a variable where set Internel store 
-
-// function time() { //this is a function where sec is increament by 1
-//                             //and print in console
-//     sec++;
-//     console.log(sec);
-
-// }
-// inter = setInterval(time , 1000); //here timer fuction call and its reapeting this by 1 sec
-// setTimeout(function(){
-//     clearInterval(inter);
-// } , 5000);
-
+// CODING BY : HASEEB ALAM RAFIQ
 var msec=00;
 var sec=00;
 var min=00;
 var intervel;
 var msech = document.getElementById("msec");
 var sech = document.getElementById("sec");
+var minh = document.getElementById("min");
 function watch(){
     var msech = document.getElementById("msec");
     msec++;
@@ -37,38 +25,53 @@ function watch(){
 
 }
 function start(){
-interval = setInterval(watch,10);
+    if (!intervel){
+        intervel = setInterval(watch,10);
+        // agr time nhi hy tu yeh timer chalo else may kuch bhi
+        // nhi ho button disabled.
+    }
+    else if (!pause()){
+            intervel = setInterval(watch,10);
+            // agr pause k buttons meand function on click nhi
+            // tu timer start hona chaheye.
+        }
 }
+
 
 function pause(){
-    clearInterval(interval);
+    clearInterval(intervel); 
 }
-
 function reset() {
-    msec =00;
+    msec = 00;
     sec = 00;
     min = 00;
-    msech.innerHTML= msec;
-    sech.innerHTML = sec +":";
-    minh.innerHTML =  min +":";
-    
+    msech.innerHTML= 00;
+    sech.innerHTML = sec + ":";
+    minh.innerHTML = min + ":";
     pause();
+}
+var text="";
+var li;
+var ul; 
+// THIS FUNCTION IS IMPORTANT FOR CREATE HTML THROGHT JS. 
+ function lap() {
+     li = document.createElement("li");
+     text = document.createTextNode(minh.innerHTML + sech.innerHTML + msech.innerHTML);
+    li.appendChild(text);
+     ul = document.getElementById("ul");
+    ul.appendChild(li);  
 }
 
 
-// function record() {
-//   var re = [];
-//   re[1] = document.getElementById("msec").innerHTML;
-//   document.write(re[1]);
 
+function resetlap() {
+    text.innerHTML = "";
+    ul = document.getElementById("ul");
+    ul.innerHTML = "";
+}
 
-
-// name.value =("NAME =" +" " + name +"<br>");
-
-// document.write(min +":" + " " + sec + ":" +" " +msec);
- 
-
-
-// var re = [record()];
-// re = record();
-
+var h = document.createElement("h1");
+var intro = document.createTextNode("DEVELOP & DESIGN BY \n HASEEB ALAM RAFIQ");
+h.appendChild(intro);
+var di = document.getElementById("intro");
+di.appendChild(h);
